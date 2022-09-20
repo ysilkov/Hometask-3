@@ -20,7 +20,7 @@ export const validate = (
       ObjectShape,
       {
         name: yup.StringSchema<string | undefined>;
-        category: RequiredStringSchema<string | undefined>;
+        category: RequiredStringSchema<string>;
         content: yup.StringSchema<string | undefined>;
       }
     >,
@@ -30,7 +30,7 @@ export const validate = (
         ObjectShape,
         {
           name: yup.StringSchema<string | undefined>;
-          category: RequiredStringSchema<string | undefined>;
+          category: RequiredStringSchema<string>;
           content: yup.StringSchema<string | undefined>;
         }
       >
@@ -40,7 +40,7 @@ export const validate = (
         ObjectShape,
         {
           name: yup.StringSchema<string | undefined>;
-          category: RequiredStringSchema<string | undefined>;
+          category: RequiredStringSchema<string>;
           content: yup.StringSchema<string | undefined>;
         }
       >
