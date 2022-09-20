@@ -1,4 +1,4 @@
-import notes from "../helpers/Note.js";
+import notes from "../helpers/notes.js";
 import { dataChangeNote, dataCreate } from "../helpers/datas.js";
 
 class NoteService {
