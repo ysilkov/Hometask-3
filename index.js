@@ -1,10 +1,9 @@
-import express from "express";
-import router from "./routes/router.js";
-
-const PORT = 4000;
-
-const app = express();
+"use strict";
+exports.__esModule = true;
+var express = require("express");
+var router_js_1 = require("./routes/router.js");
+var PORT = 4000;
+var app = express();
 app.use(express.json());
-app.use("/api", router);
-
-app.listen(PORT, () => console.log(`Server work on port ${PORT}`));
+app.use("/api", router_js_1["default"]);
+app.listen(PORT, function () { return console.log("Server work on port ".concat(PORT)); });

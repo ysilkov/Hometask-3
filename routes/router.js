@@ -1,14 +1,13 @@
-import { Router } from "express";
-import { schema, validate } from "../helpers/schema.js";
-import NoteController from "../services/NoteController.js";
-
-const router = new Router();
-
-router.post("/notes", validate(schema), NoteController.create);
-router.get("/notes", NoteController.getAll);
-router.get("/notes/stats", NoteController.stats);
-router.get("/notes/:id", NoteController.getOne);
-router.patch("/notes/:id", validate(schema), NoteController.edit);
-router.delete("/notes/:id", NoteController.delete);
-
-export default router;
+"use strict";
+exports.__esModule = true;
+var express = require("express");
+var schema_js_1 = require("../helpers/schema.js");
+var NoteController_js_1 = require("../services/NoteController.js");
+var router = express.Router();
+router.post("/notes", (0, schema_js_1.validate)(schema_js_1.schema), NoteController_js_1["default"].create);
+router.get("/notes", NoteController_js_1["default"].getAll);
+router.get("/notes/stats", NoteController_js_1["default"].stats);
+router.get("/notes/:id", NoteController_js_1["default"].getOne);
+router.patch("/notes/:id", (0, schema_js_1.validate)(schema_js_1.schema), NoteController_js_1["default"].edit);
+router["delete"]("/notes/:id", NoteController_js_1["default"]["delete"]);
+exports["default"] = router;
