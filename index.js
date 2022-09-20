@@ -8,4 +8,4 @@ app.use(express.json());
 app.use("/api", router);
 
 
-app.listen(PORT, ()=> console.log("server work"))
+app.listen(PORT, ()=> console.log(`Server work on port ${PORT}`))

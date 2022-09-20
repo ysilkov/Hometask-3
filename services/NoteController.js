@@ -1,10 +1,10 @@
-import Post from "./Post.js";
 import NoteService from "../repositories/NoteService.js";
 
 class NoteController {
     async create(req, res) {
         try {
-            const note = await NoteService.create(req.body, req.files.picture)
+            
+            const note = await NoteService.create(req.body)
             res.json(note)
         } catch (e) {
             res.status(500).json(e)
@@ -29,15 +29,23 @@ class NoteController {
     }
     async edit(req, res) {
         try {
-            const editNote = await NoteService.edit(req.body);
-            return res.json(editPost);
+            const editNote = await NoteService.edit(req.params.id, req.body);
+            return res.json(editNote);
         } catch (e) {
             res.status(500).json(e.message)
         }
     }
     async delete(req, res) {
         try {
-            const note = await NoteService.create(req.params.id);
+            const note = await NoteService.delete(req.params.id);
+            return res.json(note)
+        } catch (e) {
+            res.status(500).json(e)
+        }
+    }
+    async stats(req, res) {
+        try {
+            const note = await NoteService.statistic();
             return res.json(note)
         } catch (e) {
             res.status(500).json(e)

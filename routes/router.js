@@ -1,15 +1,16 @@
 import { Router } from "express";
-import PostController from "./PostController.js";
+import { schema, validate } from "../helpers/schema.js";
+import NoteController from "../services/NoteController.js";
 
 
 const router = new Router()
 
-router.post('/notes', PostController.create) 
-router.get('/notes', PostController.getAll)
-router.get('/notes/:id', PostController.getOne)
-router.patch('/notes/:id', PostController.update)
-router.delete('/notes/:id', PostController.delete)
-router.get('/notes/stats', PostController.getOne)
+router.post('/notes', validate(schema), NoteController.create)
+router.get('/notes', NoteController.getAll)
+router.get('/notes/stats', NoteController.stats)
+router.get('/notes/:id', NoteController.getOne)
+router.patch('/notes/:id', validate(schema), NoteController.edit)
+router.delete('/notes/:id', NoteController.delete)
 
 
 
