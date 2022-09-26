@@ -33,7 +33,9 @@ var NoteService = /** @class */ (function () {
         }
         var editNote = notes_js_1["default"].filter(function (note) { return note.id === id; });
         editNote[0].name = note.name;
-        editNote[0].content = editNote[0].content + ", " + note.content + " " + data_js_1.dataChangeNote;
+        if(note.content.length !== 0 ){
+            editNote[0].content = editNote[0].content + ", " + note.content + " " + data_js_1.dataChangeNote;
+        }
         editNote[0].category = note.category;
         editNote[0].dates = data_js_1.dataChangeNote;
         return editNote;
