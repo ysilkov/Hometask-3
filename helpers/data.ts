@@ -16,4 +16,3 @@ export const dataCreate = `${
   month[new Date().getMonth()]
 }, ${new Date().getDate()}, ${new Date().getFullYear()}`;
 export const dataChangeNote = `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`;
-

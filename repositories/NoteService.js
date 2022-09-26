@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var notes_js_1 = require("../helpers/notes.js");
-var datas_js_1 = require("../helpers/datas.js");
+var data_js_1 = require("../helpers/data.js");
 var NoteService = /** @class */ (function () {
     function NoteService() {
     }
@@ -9,7 +9,7 @@ var NoteService = /** @class */ (function () {
         var createdNote = notes_js_1["default"].push({
             id: new Date().getTime().toString(),
             name: note.name,
-            created: datas_js_1.dataCreate,
+            created: data_js_1.dataCreate,
             category: note.category,
             content: note.content,
             dates: "",
@@ -22,25 +22,25 @@ var NoteService = /** @class */ (function () {
     };
     NoteService.prototype.getOne = function (id) {
         if (!id) {
-            throw new Error("не указан ID");
+            throw new Error("Don't have ID");
         }
         var note = notes_js_1["default"].filter(function (el) { return el.id === id; });
         return note;
     };
     NoteService.prototype.edit = function (id, note) {
         if (!id) {
-            throw new Error("не указан ID");
+            throw new Error("Don't have ID");
         }
         var editNote = notes_js_1["default"].filter(function (note) { return note.id === id; });
         editNote[0].name = note.name;
         editNote[0].content = note.content;
         editNote[0].category = note.category;
-        editNote[0].dates = datas_js_1.dataChangeNote;
+        editNote[0].dates = data_js_1.dataChangeNote;
         return editNote;
     };
     NoteService.prototype["delete"] = function (id) {
         if (!id) {
-            throw new Error("не указан ID");
+            throw new Error("Don't have ID");
         }
         return notes_js_1["default"].filter(function (el) { return el.id !== id; });
     };

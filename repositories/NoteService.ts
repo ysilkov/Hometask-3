@@ -1,5 +1,5 @@
 import notes from "../helpers/notes.js";
-import { dataChangeNote, dataCreate } from "../helpers/datas.js";
+import { dataChangeNote, dataCreate } from "../helpers/data.js";
 
 class NoteService {
   create(note: { name: string; category: string; content: string }) {
@@ -20,7 +20,7 @@ class NoteService {
   }
   getOne(id: string) {
     if (!id) {
-      throw new Error("не указан ID");
+      throw new Error("Don't have ID");
     }
     const note = notes.filter((el) => el.id === id);
     return note;
@@ -28,7 +28,7 @@ class NoteService {
 
   edit(id: string, note: { name: string; content: string; category: string }) {
     if (!id) {
-      throw new Error("не указан ID");
+      throw new Error("Don't have ID");
     }
     const editNote = notes.filter((note) => note.id === id);
     editNote[0].name = note.name;
@@ -40,7 +40,7 @@ class NoteService {
 
   delete(id: string) {
     if (!id) {
-      throw new Error("не указан ID");
+      throw new Error("Don't have ID");
     }
     return notes.filter((el) => el.id !== id);
   }
