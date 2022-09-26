@@ -32,7 +32,7 @@ class NoteService {
     }
     const editNote = notes.filter((note) => note.id === id);
     editNote[0].name = note.name;
-    editNote[0].content = note.content;
+    editNote[0].content = editNote[0].content + ", " + note.content + " " + dataChangeNote;
     editNote[0].category = note.category;
     editNote[0].dates = dataChangeNote;
     return editNote;
