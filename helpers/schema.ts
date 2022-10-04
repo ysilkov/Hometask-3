@@ -11,7 +11,7 @@ import { RequiredStringSchema } from "yup/lib/string";
 
 export const schema = yup.object().shape({
   name: yup.string(),
-  category: yup.string().required(),
+  category: yup.string(),
   content: yup.string(),
 });
 export const validate = (

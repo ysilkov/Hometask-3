@@ -40,7 +40,7 @@ exports.validate = exports.schema = void 0;
 var yup = require("yup");
 exports.schema = yup.object().shape({
     name: yup.string(),
-    category: yup.string().required(),
+    category: yup.string(),
     content: yup.string()
 });
 var validate = function (schema) {
